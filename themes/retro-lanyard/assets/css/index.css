@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body{
+    font-variant-caps: all-petite-caps;
+    
+}
+
+.container {
+    display: table;
+    border-spacing: 10px 0px;
+
+    table-layout: fixed;
+    width:99vw
+}
+
+.container > div{
+    display: table-cell;
+}
+
+.widget-l {
+    margin: auto;
+    padding: 0rem 0rem 10px 3rem;
+    height: 9.5rem;
+    max-height: 9.5rem;
+    vertical-align: middle;
+    color: #000000;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 0px #000000;
+    text-align: left;
+}
+
+.widget-r {
+    padding: 0rem 3rem 10px 0rem;
+    height: 9.5rem;
+    max-height: 9.5rem;
+    color: #000000;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 0px #000000;
+    text-align: right;
+}
+    
+.greet {
+    font-size: 3rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+.date {
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.clock {
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.time {
+    display: inline-block;
+    min-width: 20px;
+}
+
+.colon {
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.songTitle {
+    font-size: 3rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.songArtist {
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+.text {
+    vertical-align: middle;
+    padding: 29.5px;
+}
+
+.songArt {
+    width: 140px;
+    margin-top: 0.6rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    position: relative;
+    float: right;
+    text-align: center;
+    -webkit-animation-name:rotate;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes rotate {
+    from { 	-webkit-transform:rotate(0deg); }
+to { -webkit-transform:rotate(360deg); }
+}
+
+
+
+
