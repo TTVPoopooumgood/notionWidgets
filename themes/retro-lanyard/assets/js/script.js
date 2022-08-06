@@ -1,14 +1,42 @@
 
-var name = 'Dan'
+var url_string = window.location.href
+var url = new URL(url_string);
+var nameValue = url.searchParams.get("name");
+
+if(nameValue == null){
+    nameValue = 'Undefined'
+}    
+
+setInterval(() => {
+    var url_string = window.location.href
+    var url = new URL(url_string);
+    var discordId = url.searchParams.get("discordid");
+    if(discordId == null){ document.getElementById('songTitle').innerText = 'No Discord Id Given'; return }
+    if(discordId.length != 18){ document.getElementById('songTitle').innerText = 'Invaild Discord Id'; return }
+    var url = `https://api.lanyard.rest/v1/users/${discordId}`
+    fetch(url)
+        .then(res => res.json())
+        .then(out => {
+            console.log(out)
+            if(out.data.listening_to_spotify == true){
+                document.getElementById('songTitle').innerText = out.data.spotify.song;
+                document.getElementById('songArtist').innerText = out.data.spotify.artist;
+                document.getElementById('songArt').setAttribute('src', out.data.spotify.album_art_url)
+            }else if(out.data.listening_to_spotify == false){
+                document.getElementById('songArtist').innerText = "You're not currently listeing to anything";
+            }
+        })
+        .catch(err => console.log(err));
+}, 2000);
 
 function dispalyGreetings(today){
     var hrs = today.getHours();
     if (hrs < 12)
-        greet = 'Good Morning  '+name;
+        greet = 'Good Morning  '+nameValue;
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon '+name;
+        greet = 'Good Afternoon '+nameValue;
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening  '+name;
+        greet = 'Good Evening  '+nameValue;
     document.getElementById('greet').innerHTML = greet;
 
 }
