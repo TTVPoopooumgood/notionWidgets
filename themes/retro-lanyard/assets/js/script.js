@@ -24,7 +24,7 @@ setInterval(() => {
                 document.getElementById('songArt').setAttribute('src', out.data.spotify.album_art_url)
             }else if(out.data.listening_to_spotify == false){
                 document.getElementById('songArtist').innerText = "You're not currently listeing to anything";
-                document.getElementById('songArtist').innerText = " ";
+                document.getElementById('songTitle').innerText = " ";
                 document.getElementById('songArt').setAttribute('src', ' ')
             }
         })
