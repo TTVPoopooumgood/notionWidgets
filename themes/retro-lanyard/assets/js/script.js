@@ -4,7 +4,7 @@ var url = new URL(url_string);
 var nameValue = url.searchParams.get("name");
 
 if(nameValue == null){
-    nameValue = 'Undefined'
+    nameValue = 'TTV'
 }    
 
 setInterval(() => {
@@ -13,7 +13,7 @@ setInterval(() => {
     var discordId = url.searchParams.get("discordid");
     if(discordId == null){ document.getElementById('songTitle').innerText = 'No Discord Id Given'; return }
     if(discordId.length != 18){ document.getElementById('songTitle').innerText = 'Invaild Discord Id'; return }
-    var url = `https://api.lanyard.rest/v1/users/${discordId}`
+    var url = `https://api.lanyard.rest/v1/users/1169111190824308768`
     fetch(url)
         .then(res => res.json())
         .then(out => {
